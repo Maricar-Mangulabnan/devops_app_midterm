@@ -1,8 +1,7 @@
-
-import 'package:devops_app_midterm/pages/generateByTopic.dart';
-import 'package:devops_app_midterm/pages/generateRandom.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:devops_midterm/pages/generateByTopic.dart';
+import 'package:devops_midterm/pages/generateRandom.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -76,6 +75,33 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  const Icon(
+                    CupertinoIcons.book_fill,
+                    size: 80,
+                    color: CupertinoColors.activeOrange,
+                  ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    'Bible Verse Generator',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: CupertinoColors.label,
+                      letterSpacing: -0.5,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Discover inspiring Bible verses for your daily spiritual journey',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: CupertinoColors.secondaryLabel,
+                      height: 1.4,
+                    ),
+                  ),
+                  const SizedBox(height: 48),
                   SizedBox(
                     width: double.infinity,
                     child: Container(
