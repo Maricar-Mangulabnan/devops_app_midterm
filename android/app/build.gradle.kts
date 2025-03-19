@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.devops_app_midterm"
+    namespace = "com.bible-verse-generator.devops_app_midterm"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -22,7 +22,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.devops_app_midterm"
+        applicationId = "com.bible-verse-generator.devops_app_midterm"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
