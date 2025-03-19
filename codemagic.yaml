@@ -1,0 +1,24 @@
+workflows:
+  flutter-ci:
+    name: Flutter CI/CD
+    max_build_duration: 60
+    instance_type: mac_mini_m1  # Use mac_mini_m1 for iOS builds
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Install Flutter dependencies
+        script: flutter pub get
+      - name: Run Flutter tests
+        script: flutter test
+      - name: Build Android APK
+        script: flutter build apk --release
+      - name: Build Android App Bundle (AAB)
+        script: flutter build appbundle --release
+      - name: Build iOS App
+        script: flutter build ios --release --no-codesign
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+      - build/app/outputs/bundle/release/app-release.aab
+      - build/ios/iphoneos/*.app
