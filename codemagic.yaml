@@ -40,7 +40,8 @@ workflows:
         script: |
           gcloud auth activate-service-account --key-file=/tmp/google_play.json
           gcloud --quiet auth configure-docker
-          fastlane supply --track beta --json-key /tmp/google_play.json --package_name com.bible-verse-generator.devopsappmidterm --aab build/app/outputs/bundle/release/app-release.aab
+          fastlane supply --track beta --json-key /tmp/google_play.json --package_name com.bibleversegenerator.devopsappmidterm --aab build/app/outputs/bundle/release/app-release.aab
+
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
       - build/app/outputs/bundle/release/app-release.aab
