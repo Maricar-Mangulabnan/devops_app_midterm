@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:devops_midterm/pages/generateByTopic.dart';
-import 'package:devops_midterm/pages/generateRandom.dart';
+import 'package:devops_app_midterm/pages/generateByTopic.dart';
+import 'package:devops_app_midterm/pages/generateRandom.dart';
+
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   bool _started = false;
   late AnimationController _animationController;

@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:devops_midterm/public/bibleVerseData.dart';
+import '../public/bibleVerseData.dart';
 
 class GenerateRandomPage extends StatefulWidget {
   final VoidCallback onBackHome;

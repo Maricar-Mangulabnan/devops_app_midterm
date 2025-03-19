@@ -1,6 +1,6 @@
-import 'package:devops_midterm/public/bibleVerseData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import '../public/bibleVerseData.dart';
 
 class GenerateByTopicPage extends StatefulWidget {
   final VoidCallback onBackHome;

@@ -7,17 +7,34 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
+      groups:
+        - signing_credentials  # Codemagic environment group for storing sensitive keystore data
     scripts:
       - name: Install Flutter dependencies
         script: flutter pub get
+
       - name: Run Flutter tests
         script: flutter test
+
+      - name: Decode Keystore File
+        script: echo $CM_KEYSTORE | base64 --decode > android/app/upload-keystore.jks
+
+      - name: Create key.properties
+        script: |
+          echo "storePassword=$CM_STORE_PASSWORD" > android/app/key.properties
+          echo "keyPassword=$CM_KEY_PASSWORD" >> android/app/key.properties
+          echo "keyAlias=$CM_KEY_ALIAS" >> android/app/key.properties
+          echo "storeFile=./upload-keystore.jks" >> android/app/key.properties
+
       - name: Build Android APK
         script: flutter build apk --release
+
       - name: Build Android App Bundle (AAB)
         script: flutter build appbundle --release
+
       - name: Build iOS App
         script: flutter build ios --release --no-codesign
+
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
       - build/app/outputs/bundle/release/app-release.aab
