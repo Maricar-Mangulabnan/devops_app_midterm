@@ -61,5 +61,5 @@ flutter {
 }
 
 dependencies {
-    implementation 'androidx.work:work-runtime-ktx:2.7.0' // Added dependency for WorkManager
+    implementation("androidx.work:work-runtime-ktx:2.7.0") // Corrected Kotlin DSL format
 }
