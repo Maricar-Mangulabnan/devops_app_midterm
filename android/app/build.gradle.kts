@@ -59,3 +59,7 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    implementation 'androidx.work:work-runtime-ktx:2.7.0' // Added dependency for WorkManager
+}
