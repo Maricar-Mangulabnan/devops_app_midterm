@@ -3,14 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:devops_app_midterm/pages/generateByTopic.dart';
 import 'package:devops_app_midterm/pages/generateRandom.dart';
 
-
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
   @override
   State<HomePage> createState() => _HomePageState();
 }
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   bool _started = false;
   late AnimationController _animationController;
   late Animation<double> _fadeInAnimation;
@@ -23,10 +23,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       duration: const Duration(milliseconds: 800),
     );
     _fadeInAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _animationController,
-        curve: Curves.easeIn,
-      ),
+      CurvedAnimation(parent: _animationController, curve: Curves.easeIn),
     );
     _animationController.forward();
   }
@@ -60,10 +57,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         navigationBar: const CupertinoNavigationBar(
           middle: Text(
             'Bible Verse Generator',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              letterSpacing: -0.5,
-            ),
+            style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: -0.5),
           ),
           backgroundColor: CupertinoColors.systemBackground,
           border: null,
@@ -112,7 +106,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       ),
                       child: CupertinoButton(
                         borderRadius: BorderRadius.circular(12),
-                        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 32,
+                          vertical: 14,
+                        ),
+                        onPressed: _startApp,
                         child: const Text(
                           'Get Started',
                           style: TextStyle(
@@ -121,7 +119,6 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             color: CupertinoColors.white,
                           ),
                         ),
-                        onPressed: _startApp,
                       ),
                     ),
                   ),
@@ -152,9 +149,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ],
         ),
         tabBuilder: (context, index) {
-          return CupertinoTabView(
-            builder: (context) => pages[index],
-          );
+          return CupertinoTabView(builder: (context) => pages[index]);
         },
       );
     }
